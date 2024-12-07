@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="table-container">
+      <div>
+        <button class="new-button" (click)="gotoCryptocurrencyForm('new')">Nueva Criptomoneda</button>
+      </div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Símbolo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cryptocurrency of cryptocurrencies; let i = index">
+            <td>{{ cryptocurrency.id }}</td>
+            <td>{{ cryptocurrency.code }}</td>
+            <td>{{cryptocurrency.name }}</td>
+            <td>{{ cryptocurrency.symbol }}</td>
+            <td style="text-align: center;">
+              <button class="action-button" (click)="gotoCryptocurrencyForm(cryptocurrency.id.toString())">
+                <img style="width:1rem;" src="assets/boton-editar.png"  alt="editar">
+              </button>
+              <button class="action-button" (click)="deleteCryptocurrencies(cryptocurrency.id)">
+                <img style="width:1rem" src="assets/borrar.png"  alt="eliminar">
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

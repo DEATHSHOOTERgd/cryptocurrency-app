@@ -1,0 +1,105 @@
+$screen-sm-min: 576px;
+
+$screen-md-min: 768px;
+
+$screen-lg-min: 992px;
+
+$screen-xl-min: 1200px;
+
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+
+.form-container{
+    @include md{
+        width: 100%;
+    }
+    @include lg{
+        width: 75%;
+    }
+  }
+
+  .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;  // Horizontally center the div
+    align-items: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // space between form elements
+    max-width: 600px; // limit max width
+    margin: 0 auto; // center the form horizontally
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Define form group style (label and input)
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+  
+    input,
+    textarea,
+    button {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+  
+      &:focus {
+        border-color: #df0081;
+      }
+    }
+  
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  
+    button {
+      background-color: #df0081;
+      color: white;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #df0081;
+      }
+    }
+  }

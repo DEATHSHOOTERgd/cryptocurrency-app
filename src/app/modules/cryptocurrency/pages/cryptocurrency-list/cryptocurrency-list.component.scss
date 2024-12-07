@@ -1,0 +1,99 @@
+$screen-sm-min: 576px;
+
+$screen-md-min: 768px;
+
+$screen-lg-min: 992px;
+
+$screen-xl-min: 1200px;
+
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  
+    thead {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+  
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  
+    th {
+      background-color: #df0081;
+      color: white;
+    }
+  }
+
+  .action-button{
+    margin-left:1rem;
+    margin-right:1rem;
+    padding:0.5rem;
+  }
+
+  .table-container{
+    @include md{
+        width: 100%;
+    }
+    @include lg{
+        width: 75%;
+    }
+  }
+
+  .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;  // Horizontally center the div
+    align-items: center;
+  }
+  .new-button {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #df0081;
+    border-radius: 4px;
+    outline: none;
+    background-color: #df0081;
+    color: white;
+
+    &:focus {
+      border-color: #df0081;
+    }
+  }
